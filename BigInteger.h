@@ -444,19 +444,19 @@ pair<string, long long> BigInteger::divide(string n, long long den){
     int len=n.length();
     result.resize(len);
 
-    for(int i=0;i<len;i++){
-        rem=(rem*10)+(n[i]-'0');
-        result[i]=rem/den+'0';
-        rem%=den;
+    for(int i = 0 ; i < len ; i++){
+        rem = (rem * 10) + (n[i] - '0');
+        result[i] = rem / den + '0';
+        rem %= den;
     }
 
     //Removing leading 0's
-    while(result[0]=='0' && result.length()!=1)
+    while(result[0] == '0' && result.length() != 1)
         result.erase(0,1);
     
     //If den is greater than n
-    if(result.length()==0){
-        result="0";
+    if(result.length() == 0){
+        result = "0";
     }
     return {result, rem};
 }
@@ -465,16 +465,16 @@ pair<string, long long> BigInteger::divide(string n, long long den){
 string BigInteger::toString(long long n){
     stringstream ss;
     string temp;
-    ss<<n;
-    ss>>temp;
+    ss << n;
+    ss >> temp;
     return temp;
 }
 
 //Coverting string to integer(upto long long range)
 long long BigInteger::toInt(string s){
-    long long sum=0;
-    for(int i=0;i<s.length();i++){
-        sum=(sum*10)+(s[i]-'0');
+    long long sum = 0;
+    for(int i = 0 ; i < s.length() ; i++){
+        sum = (sum * 10) + (s[i] - '0');
     }
     return sum;
 }
