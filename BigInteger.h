@@ -2,7 +2,7 @@
 #define BIGINTEGER_H
 
 #include<bits/stdc++.h>
-#define MAX 10000 //for strings
+#define MAX 10000
 using namespace std;
 
 class BigInteger{
@@ -10,7 +10,6 @@ class BigInteger{
         string number;
         bool sign;
     public:
-        //Constructors
         BigInteger();  //Empty Constructor intializes to zero
         BigInteger(string s);  //string constructor
         BigInteger(string s, bool sin);  //string constructor with sign
@@ -216,8 +215,6 @@ BigInteger BigInteger::operator - (){
     return (*this)*-1;
 }
 
-//-----Increment/Decrement Operator-----
-//Reference to be returned(where possible)(We can't return reference of a local variable)
 BigInteger& BigInteger::operator ++(){
     (*this)=(*this)+1;
     return (*this);
@@ -397,12 +394,9 @@ string BigInteger::subtract(string number1,string number2){
 }
 
 string BigInteger::multiply(string n1, string n2){
-
-    //To assure n2 is greater than n2
     if(n1.length()>n2.length()) n1.swap(n2);
     string res="0";
 
-    //Multiplying one by one digit of n1 to n2 and increasing one 0 at last each time
     for(int i=n1.length()-1;i>=0;i--){
         string temp=n2;
         int currentDigit=n1[i]-'0';
@@ -437,7 +431,6 @@ string BigInteger::multiply(string n1, string n2){
     return res;
 }
 
-//For divide and modulus 
 pair<string, long long> BigInteger::divide(string n, long long den){
     long long rem=0;
     string result;
@@ -450,18 +443,15 @@ pair<string, long long> BigInteger::divide(string n, long long den){
         rem %= den;
     }
 
-    //Removing leading 0's
     while(result[0] == '0' && result.length() != 1)
         result.erase(0,1);
     
-    //If den is greater than n
     if(result.length() == 0){
         result = "0";
     }
     return {result, rem};
 }
 
-//Converting integer to string (upto long long range)
 string BigInteger::toString(long long n){
     stringstream ss;
     string temp;
@@ -470,7 +460,6 @@ string BigInteger::toString(long long n){
     return temp;
 }
 
-//Coverting string to integer(upto long long range)
 long long BigInteger::toInt(string s){
     long long sum = 0;
     for(int i = 0 ; i < s.length() ; i++){
