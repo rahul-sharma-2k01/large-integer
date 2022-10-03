@@ -10,8 +10,7 @@ An Implementation of BigInteger Library in C++
     ```cpp
     #include "BigInteger.h"
     ```
-* Open to improvements and suggestions.
-* Rest documentation is written below.
+
 
 ## Documentation
 
@@ -71,19 +70,4 @@ An Implementation of BigInteger Library in C++
 * **operator <kbd><</kbd>** --> `A<B` Returns whether BigInteger A is less than BigIntger B. `isSmaller`
 * **operator <kbd>>=</kbd>** --> `A>=B` Returns whether BigInteger A is greater than or equal to BigIntger B. `isGreaterOrEqual`
 * **operator <kbd><=</kbd>** --> `A<=B` Returns whether BigInteger A is less than or equal to BigIntger B. `isSmallerOrEqual`
-                                              
-#### Additional Operators
-* **operator <kbd>[]</kbd>** --> `arr[i]` Returns ith index BigInteger in array of BigInteger arr. `Array Index Operator`
-* **operator <kbd>string()</kbd>** --> `string(A)` Returns string form of BigInteger for printing purposes. `String Convertor`  
-
-### What Next?
-Now, just down download the BigInteger.h file from code and include it in your folder. Use the following code snnipet in your code:-
-```cpp
-#include<bits/stdc++.h>
-#include "BigInteger.h"
-using namespace std;
-int main{
-
-    return 0;
-}
-```                                                                                                        
+                                                                                                                                             
