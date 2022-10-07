@@ -111,7 +111,7 @@ BigInteger::BigInteger(int n){
 
 //------------------Set-Get Functions---------------------
 void BigInteger::setNumber(string s){
-    for(int i=0;i<s.length();i++){
+    for(size_t i=0;i<s.length();i++){
         if(s[i]<'0' || s[i]>'9'){
             throw "Not a number";
         }
@@ -462,7 +462,7 @@ string BigInteger::toString(long long n){
 
 long long BigInteger::toInt(string s){
     long long sum = 0;
-    for(int i = 0 ; i < s.length() ; i++){
+    for(size_t i = 0 ; i < s.length() ; i++){
         sum = (sum * 10) + (s[i] - '0');
     }
     return sum;
