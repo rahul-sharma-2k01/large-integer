@@ -22,7 +22,7 @@ class BigInteger{
 
         BigInteger absolute(); //Return the Absolute value
 
-        //Operators
+        //Arithematic Operators
         BigInteger operator + (BigInteger b);
         BigInteger operator - (BigInteger b);
         BigInteger operator * (BigInteger b);
@@ -42,6 +42,7 @@ class BigInteger{
         BigInteger& operator /= (BigInteger b);
         BigInteger& operator %= (BigInteger b);
 
+        //Relational Operators
         bool operator ==(BigInteger b);
         bool operator !=(BigInteger b);
         bool operator >(BigInteger b);
@@ -109,7 +110,7 @@ BigInteger::BigInteger(int n){
 }
 
 
-//------------------Set-Get Functions---------------------
+//------------------Setter-Getter Functions---------------------
 void BigInteger::setNumber(string s){
     for(int i=0;i<s.length();i++){
         if(s[i]<'0' || s[i]>'9'){
